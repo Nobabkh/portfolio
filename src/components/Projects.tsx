@@ -102,9 +102,9 @@ const Projects: React.FC<ProjectsProps> = ({ scrollY }) => {
   ]
 
   return (
-    <section className="projects-section parallax-section" ref={sectionRef}>
+    <section id="projects" className="projects-section parallax-section" ref={sectionRef}>
       <div
-        className="projects-content parallax-content section"
+        className="projects-content parallax-content"
         style={{ '--parallax-offset': `${-parallaxOffset}px` } as React.CSSProperties}
       >
         <div className={`projects-container ${isVisible ? 'visible' : ''}`}>

@@ -33,17 +33,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Copy build files to root
-        run: |
-          cp -r dist/assets .
-          cp dist/index.html .
-          cp dist/404.html .
-          cp dist/*.svg . 2>/dev/null || true
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
 
   deploy:
     environment:

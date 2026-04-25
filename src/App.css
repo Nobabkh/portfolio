@@ -2,7 +2,23 @@
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background: var(--bg-primary);
+}
+
+/* Ambient background glow effects */
+.app::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(ellipse 600px 600px at 20% 20%, rgba(139, 92, 246, 0.08), transparent),
+    radial-gradient(ellipse 500px 500px at 80% 50%, rgba(34, 211, 238, 0.05), transparent),
+    radial-gradient(ellipse 400px 400px at 50% 80%, rgba(99, 102, 241, 0.06), transparent);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Consistent section styling */
@@ -12,106 +28,77 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
+  z-index: 1;
 }
 
 .parallax-content {
-  transform: translateY(var(--parallax-offset, 0));
+  transform: translate3d(0, var(--parallax-offset, 0), 0);
   transition: transform 0.1s ease-out;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  will-change: transform;
 }
 
-/* Glass morphism effect - consistent across all sections */
+
+/* Glass morphism effect — dark variant */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Section visibility animations */
-.section {
+/* Section visibility — fade-in on scroll */
+.section-animate {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.section.visible {
+.section-animate.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Consistent typography */
-h1, h2, h3, h4 {
-  color: white !important;
-  font-weight: 700;
-}
-
-p, span, li, a {
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* Section titles - consistent styling */
+/* Section titles — consistent styling */
 .section-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
-  color: white !important;
+  color: var(--text-primary);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   position: relative;
+  letter-spacing: -0.02em;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-accent);
   border-radius: 2px;
+  box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .parallax-section {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     min-height: auto;
   }
 
   .section-title {
     font-size: 2rem;
   }
-}
-
-/* Ensure all text is visible */
-* {
-  color: inherit;
-}
-
-/* Force text visibility for all content */
-.hero-title,
-.hero-subtitle,
-.hero-description,
-.about-intro,
-.about-description,
-.contact-intro,
-.project-description,
-.experience-description {
-  color: white !important;
-}
-
-/* Ensure links are visible */
-a {
-  color: #fbbf24 !important;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #fbbf24 !important;
-  opacity: 0.8;
 }

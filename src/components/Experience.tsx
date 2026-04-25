@@ -89,7 +89,7 @@ const Experience: React.FC<ExperienceProps> = ({ scrollY }) => {
   return (
     <section className="experience-section parallax-section" ref={sectionRef}>
       <div
-        className="experience-content parallax-content section"
+        className="experience-content parallax-content"
         style={{ '--parallax-offset': `${-parallaxOffset}px` } as React.CSSProperties}
       >
         <div className={`experience-container ${isVisible ? 'visible' : ''}`}>

@@ -35,9 +35,9 @@ const About: React.FC<AboutProps> = ({ scrollY }) => {
   const parallaxOffset = (scrollY - window.innerHeight) * 0.3
 
   return (
-    <section className="about-section parallax-section" ref={sectionRef}>
+    <section id="about" className="about-section parallax-section" ref={sectionRef}>
       <div
-        className="about-content parallax-content section"
+        className="about-content parallax-content"
         style={{ '--parallax-offset': `${-parallaxOffset}px` } as React.CSSProperties}
       >
         <div className={`about-container ${isVisible ? 'visible' : ''}`}>

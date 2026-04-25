@@ -60,7 +60,7 @@ const Skills: React.FC<SkillsProps> = ({ scrollY }) => {
   return (
     <section className="skills-section parallax-section" ref={sectionRef}>
       <div
-        className="skills-content parallax-content section"
+        className="skills-content parallax-content"
         style={{ '--parallax-offset': `${-parallaxOffset}px` } as React.CSSProperties}
       >
         <div className={`skills-container ${isVisible ? 'visible' : ''}`}>

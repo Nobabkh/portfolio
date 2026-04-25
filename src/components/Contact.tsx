@@ -68,7 +68,7 @@ const Contact: React.FC<ContactProps> = ({ scrollY }) => {
       ref={sectionRef}
     >
       <div
-        className="contact-content parallax-content section"
+        className="contact-content parallax-content"
         style={{ '--parallax-offset': `${-parallaxOffset}px` } as React.CSSProperties}
       >
         <div className={`contact-container ${isVisible ? 'visible' : ''}`}>
@@ -119,7 +119,7 @@ const Contact: React.FC<ContactProps> = ({ scrollY }) => {
           </div>
           <div className="contact-footer">
             <p>
-              Built with ❤️ using React, TypeScript, and Tailwind CSS
+              Built with ❤️ using React, TypeScript & Vite
             </p>
             <p className="footer-note">
               © 2025 Nobab Khan. All rights reserved.
