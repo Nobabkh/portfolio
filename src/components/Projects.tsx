@@ -83,6 +83,22 @@ const Projects: React.FC<ProjectsProps> = ({ scrollY }) => {
       icon: '🚌',
       status: 'Deployed',
     },
+    {
+      title: 'ProviderClient',
+      description:
+        'Service provider client application with real-time communication and integration capabilities',
+      tags: ['React', 'TypeScript', 'Node.js', 'WebSockets'],
+      icon: '🔌',
+      status: 'Active',
+    },
+    {
+      title: 'Howlops',
+      description:
+        'Advanced workflow automation and orchestration system with AI-powered decision making',
+      tags: ['Python', 'FastAPI', 'AI/ML', 'Automation'],
+      icon: '⚡',
+      status: 'Active',
+    },
   ]
 
   return (
