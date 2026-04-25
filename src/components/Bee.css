@@ -1,0 +1,49 @@
+.bee {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  transition: transform 0.05s ease-out;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.bee svg {
+  width: 50px;
+  height: 50px;
+}
+
+.wing {
+  animation: wingFlap 0.1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.left-wing {
+  animation-delay: 0s;
+}
+
+.right-wing {
+  animation-delay: 0.05s;
+}
+
+@keyframes wingFlap {
+  0%, 100% {
+    transform: scaleY(1) rotateX(0deg);
+  }
+  50% {
+    transform: scaleY(0.7) rotateX(20deg);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .bee svg {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bee svg {
+    width: 30px;
+    height: 30px;
+  }
+}
