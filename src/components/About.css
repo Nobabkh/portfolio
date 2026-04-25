@@ -1,5 +1,4 @@
 .about-section {
-  background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
   position: relative;
 }
 
@@ -33,32 +32,12 @@
   transform: translateY(0);
 }
 
-.section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  color: white;
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
-  border-radius: 2px;
-}
-
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: start;
+  margin-top: 2rem;
 }
 
 .about-text {
@@ -71,24 +50,22 @@
 
 .about-intro {
   font-size: 1.2rem;
-  color: white;
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
 .about-intro strong {
-  color: #fbbf24;
+  color: #fbbf24 !important;
   font-weight: 700;
 }
 
 .about-description {
-  color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
   margin-bottom: 2rem;
 }
 
 .about-description strong {
-  color: #fbbf24;
+  color: #fbbf24 !important;
   font-weight: 600;
 }
 
@@ -119,14 +96,12 @@
 }
 
 .highlight-item h3 {
-  color: white;
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
   font-weight: 600;
 }
 
 .highlight-item p {
-  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   margin: 0;
 }
@@ -155,12 +130,11 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #fbbf24;
+  color: #fbbf24 !important;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  color: white;
   font-size: 1rem;
   font-weight: 500;
 }

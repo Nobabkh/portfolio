@@ -10,13 +10,14 @@
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   overflow-x: hidden;
+  color: white;
 }
 
 #root {
   min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 }
 
 .bee {
@@ -54,7 +55,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hide scrollbar but keep functionality */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }

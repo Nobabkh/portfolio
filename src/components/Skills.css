@@ -1,5 +1,4 @@
 .skills-section {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   position: relative;
 }
 
@@ -66,7 +65,6 @@
 }
 
 .category-title {
-  color: white;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
@@ -80,7 +78,6 @@
 
 .skill-tag {
   background: rgba(255, 255, 255, 0.15);
-  color: white;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   font-size: 0.9rem;

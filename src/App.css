@@ -2,24 +2,28 @@
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 }
 
-/* Parallax section styling */
+/* Consistent section styling */
 .parallax-section {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
 }
 
 .parallax-content {
   transform: translateY(var(--parallax-offset, 0));
   transition: transform 0.1s ease-out;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Glass morphism effect */
+/* Glass morphism effect - consistent across all sections */
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -28,40 +32,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Animated gradient background */
-.animated-gradient {
-  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Floating animation */
-.floating {
-  animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/* Section transitions */
+/* Section visibility animations */
 .section {
   opacity: 0;
   transform: translateY(50px);
@@ -73,22 +44,74 @@
   transform: translateY(0);
 }
 
+/* Consistent typography */
+h1, h2, h3, h4 {
+  color: white !important;
+  font-weight: 700;
+}
+
+p, span, li, a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Section titles - consistent styling */
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: white !important;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  border-radius: 2px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .parallax-section {
-    padding: 1rem;
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }
 
-/* Custom scrollbar for sections */
-.section-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Ensure all text is visible */
+* {
+  color: inherit;
 }
 
-@media (max-width: 768px) {
-  .section-content {
-    padding: 1rem;
-  }
+/* Force text visibility for all content */
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.about-intro,
+.about-description,
+.contact-intro,
+.project-description,
+.experience-description {
+  color: white !important;
+}
+
+/* Ensure links are visible */
+a {
+  color: #fbbf24 !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fbbf24 !important;
+  opacity: 0.8;
 }
